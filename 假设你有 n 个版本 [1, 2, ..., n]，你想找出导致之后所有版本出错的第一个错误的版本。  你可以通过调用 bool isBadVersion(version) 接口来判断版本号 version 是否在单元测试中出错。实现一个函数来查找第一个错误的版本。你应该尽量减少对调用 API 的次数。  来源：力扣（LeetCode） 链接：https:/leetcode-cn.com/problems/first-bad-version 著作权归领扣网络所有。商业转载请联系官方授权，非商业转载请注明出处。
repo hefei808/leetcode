@@ -1,0 +1,18 @@
+class Solution(object):
+    def firstBadVersion(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if(isBadVersion(1)):
+            return 1
+        i=3
+        while(i<=n):
+            if(isBadVersion(i)):
+                if(isBadVersion(i-1)):
+                    return i-1
+                else:
+                    return i
+            else:
+                i+=2
+        return n

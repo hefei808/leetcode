@@ -1,4 +1,5 @@
 class Solution(object):
+    #间隔为2
     def firstBadVersion(self, n):
         """
         :type n: int
@@ -16,3 +17,32 @@ class Solution(object):
             else:
                 i+=2
         return n
+    #间隔为3
+    def firstBadVersion(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        if(isBadVersion(1)):
+            return 1
+        i=4
+        while(i<=n):
+            if(isBadVersion(i)):
+                if(isBadVersion(i-2)):
+                    return i-2
+                elif(isBadVersion(i-1)):
+                    return i-1
+                else:
+                    return i
+            else:
+                i+=3
+        if(isBadVersion(i-2)):
+            return i-2
+        else:
+            return i-1
+        # for j in range(i-2,n):
+        #     if(isBadVersion(j)):
+        #         return j
+        
+
+
